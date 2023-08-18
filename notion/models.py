@@ -22,6 +22,7 @@ class Product(models.Model):
     productContent = models.TextField()
     productImage = models.ImageField(null=True, blank=True)
     productOption = models.TextField()
+    prodctPrice = models.CharField(max_length=100)
     
 
     def __str__(self):
