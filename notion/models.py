@@ -14,3 +14,15 @@ class Notion(models.Model):
     def __str__(self):
         return self.title
     
+
+
+class Product(models.Model):
+    productId = models.AutoField(primary_key=True)
+    productTitle = models.CharField(max_length=100)
+    productContent = models.TextField()
+    productImage = models.ImageField(null=True, blank=True)
+    productOption = models.TextField()
+    
+
+    def __str__(self):
+        return self.productTitle

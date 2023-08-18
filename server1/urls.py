@@ -22,12 +22,14 @@ from server1 import settings
 from django.conf.urls.static import static
 
 router = routers.DefaultRouter()
-router.register(r'notion', views.NotionViewSet)
+#router.register(r'notion', views.NotionViewSet)
+router.register(r'products', views.ProductViewSet)
 
 urlpatterns = [
     path('notion/', include('notion.urls')),
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
+    
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

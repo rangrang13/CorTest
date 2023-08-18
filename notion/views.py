@@ -1,17 +1,21 @@
-
-from django.shortcuts import render
+from rest_framework.views import APIView
+from rest_framework.response import Response
 from rest_framework import viewsets
-from rest_framework.permissions import IsAuthenticated
+from rest_framework import status
 from notion.models import Notion
 from notion.serializers import NotionSerializer
+from .models import Product
+from .serializers import ProductSerializer
 
 class NotionViewSet(viewsets.ModelViewSet):
     queryset = Notion.objects.all()
     serializer_class = NotionSerializer
-    #permission_classes = [IsAuthenticated] #로그인 한 사람만 글 쓸수 있게함
 
-    #def perform_create(self, serializer):
-        #serializer.save(author=self.request.user)
+class ProductViewSet(viewsets.ModelViewSet):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+
+   
 
 
 
