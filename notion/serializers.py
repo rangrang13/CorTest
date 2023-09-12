@@ -7,7 +7,7 @@ from notion.models import Product
 class NotionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Notion
-        fields = ('id', 'title', 'content', 'image')
+        fields = ('id', 'title', 'content')
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
